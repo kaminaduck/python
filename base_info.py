@@ -1,6 +1,7 @@
 '''
 References: 
-https://geeksforgeeks.com/extracting-mac-address-using-python/
+https://www.geeksforgeeks.com/extracting-mac-address-using-python/
+https://www.geeksforgeeks.org/get-your-system-information-using-python-script/
 '''
 
 # testing imports needed
