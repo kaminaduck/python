@@ -32,4 +32,4 @@ def HW_Info(): #gathering hardware info for top of report
         print("Info not available")
 
 # Testing functions
-HW_Info
+HW_Info()
