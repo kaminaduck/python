@@ -1,6 +1,6 @@
 '''
 References: 
-https://www.geeksforgeeks.com/extracting-mac-address-using-python/
+https://www.geeksforgeeks.org/extracting-mac-address-using-python/
 https://www.geeksforgeeks.org/get-your-system-information-using-python-script/
 '''
 
@@ -8,29 +8,26 @@ https://www.geeksforgeeks.org/get-your-system-information-using-python-script/
 import ipaddress, os, socket, uuid, platform, re
 
 # pre-define global variables
-global hostname, FQDN, IPaddr, MAC, OSenvironment, rhel_environment, win_environment
+global hostname, FQDN, IPaddr, MAC, OS_environment, OS_version, my_system
 
 # set values for global variables
-hostname = socket.gethostname()
+my_system = platform.uname()
+hostname = my_system.node
 FQDN = socket.getfqdn(hostname)
 IPaddr = socket.gethostbyname(hostname)
 MAC = (':'.join(re.findall('..','%012x' % uuid.getnode()))) #still need to understand this
-OSenvironment = platform.system()
-rhel_environment = str(platform.libc_ver())
-win_environment = str(platform.win32_ver())
+OS_environment = my_system.system
+OS_version = my_system.version
 
 def HW_Info(): #gathering hardware info for top of report
     print("Host: "+ hostname)
     print("FQDN: "+ FQDN)
     print("IP Address: "+ IPaddr)
-    print("OS Type: "+ OSenvironment)
+    print("OS Environment: "+ OS_environment)
     print("MAC Address: "+ MAC)
-    if OSenvironment == "Linux":
-        print("RHEL Info: "+ rhel_environment)
-    elif OSenvironment == "Windows":
-        print("Windows Info: "+ win_environment)
+    if OS_environment != "Linux" and OS_environment != "Windows":
+        print("OS version not available; OS Environment not found")
     else:
-        print("Info not available")
-
+        print(OS_environment + " Version: " + OS_version)
 # Testing functions
 HW_Info()
