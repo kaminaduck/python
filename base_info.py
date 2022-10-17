@@ -8,9 +8,10 @@ https://www.geeksforgeeks.org/get-your-system-information-using-python-script/
 import ipaddress, os, socket, uuid, platform, re
 
 # pre-define global variables
-global hostname, FQDN, IPaddr, MAC, OS_environment, OS_version, my_system
+global hostname, FQDN, IPaddr, MAC, OS_environment, OS_version, my_system, dash
 
 # set values for global variables
+dash = "----------------------------------------"
 my_system = platform.uname()
 hostname = my_system.node
 FQDN = socket.getfqdn(hostname)
@@ -20,6 +21,7 @@ OS_environment = my_system.system
 OS_version = my_system.version
 
 def HW_Info(): #gathering hardware info for top of report
+    print(dash)
     print("Host: "+ hostname)
     print("FQDN: "+ FQDN)
     print("IP Address: "+ IPaddr)
@@ -29,5 +31,6 @@ def HW_Info(): #gathering hardware info for top of report
         print("OS version not available; OS Environment not found")
     else:
         print(OS_environment + " Version: " + OS_version)
+    print(dash)
 # Testing functions
 HW_Info()
