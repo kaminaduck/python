@@ -22,9 +22,7 @@ __author__ = "Charlie Rogers"
 __contact__ = "charlie.rogers@fearnworks.com"
 __copyright__ = "Copyright 2022"
 # credits go to those who offered suggestions, reported big fixes, but did not write code
-__credits__ = ["Charlie Rogers", "Kate Libby", "Dade Murphy",
-                    "Paul Cook", "Joey Pardella", 
-                    "Phantom Phreak","Razor and Blade"]
+__credits__ = ["Charlie Rogers"]
 __date__ = "2022/10/17"
 __deprecated__ = False
 __email__ = "charlie.rogers@fearnworks.com"
