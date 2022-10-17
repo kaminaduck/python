@@ -30,8 +30,8 @@ __deprecated__ = False
 __email__ = "charlie.rogers@fearnworks.com"
 __license__ = "GPL" # or proprietary
 __maintainer__ = "Charlie Rogers"  # person who will fix bugs and make improvements if imported
-__status__ = "Prototype"   # "Prototype", "Development" or "Production"
-__version__ = "0.0.1"   # Major.minor.patch
+__status__ = "Development"   # "Prototype", "Development" or "Production"
+__version__ = "0.0.3"   # Major.minor.patch
 
 # pre-define global variables
 global hostname, FQDN, IPaddr, MAC, OS_environment, OS_version, my_system, dash, win_tick_library
